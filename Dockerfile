@@ -27,10 +27,10 @@ RUN chmod +x /root/*.sh && \
 VOLUME /config
 
 # expose port for http
-EXPOSE 80
+EXPOSE 8080
 
 # expose port for https
-EXPOSE 443
+EXPOSE 8443
 
 # set permissions
 #################
