@@ -1,6 +1,6 @@
 **Application**
 
-[nginx](https://www.nginx.com/)
+[NGINX](https://www.nginx.com/)
 
 **Description**
 
