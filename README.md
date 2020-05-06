@@ -1,10 +1,10 @@
 **Application**
 
-[trigger-docker-build](https://github.com/binhex/trigger-docker-build)
+[nginx](https://www.nginx.com/)
 
 **Description**
 
-Utility script to automate monitoring of application versions and trigger builds on GitHub. Please note this is for internal development use only.
+NGINX is open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more. It started out as a web server designed for maximum performance and stability. In addition to its HTTP server capabilities, NGINX can also function as a proxy server for email (IMAP, POP3, and SMTP) and a reverse proxy and load balancer for HTTP, TCP, and UDP servers.
 
 **Build notes**
 
@@ -19,7 +19,7 @@ docker run -d \
     -e UMASK=<umask for created files> \
     -e PUID=<uid for user> \
     -e PGID=<gid for user> \
-    binhex/arch-tdb
+    binhex/arch-nginx
 ```
 
 Please replace all user variables in the above command defined by <> with the correct values.
@@ -32,13 +32,13 @@ Command line only via:
 **Example**
 ```
 docker run -d \
-    --name=tdb \
-    -v /apps/docker/tdb:/config \
+    --name=nginx \
+    -v /apps/docker/nginx:/config \
     -v /etc/localtime:/etc/localtime:ro \
     -e UMASK=000 \
     -e PUID=0 \
     -e PGID=0 \
-    binhex/arch-tdb
+    binhex/arch-nginx
 ```
 
 **Notes**
