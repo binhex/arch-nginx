@@ -51,11 +51,20 @@ aur_packages=""
 # call aur install script (arch user repo)
 source aur.sh
 
-# container perms
+# custom
 ####
 
+# move default nginx config so we can softlink back from /config
+mv "/etc/nginx" "/etc/nginx-backup"
+
+# move default nginx website so we can softlink back from /config
+mv "/usr/share/nginx/html" "/usr/share/nginx/html-backup"
+
+# required to allow user nobody to create softlink to /etc/nginx
+chmod 777 /etc
+
 # define comma separated list of paths 
-install_paths="/etc/nginx,/var/lib/nginx,/var/log/nginx,/home/nobody"
+install_paths="/etc/nginx-backup,/var/lib/nginx,/var/log/nginx,/usr/share/nginx,/home/nobody"
 
 # split comma separated string into list for install paths
 IFS=',' read -ra install_paths_list <<< "${install_paths}"
