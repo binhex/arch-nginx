@@ -16,6 +16,8 @@ docker run -d \
     --name=<container name> \
     -v <path for config files>:/config \
     -v /etc/localtime:/etc/localtime:ro \
+    -p <host port for http>:8080 \
+    -p <host port for https>:8443 \
     -e UMASK=<umask for created files> \
     -e PUID=<uid for user> \
     -e PGID=<gid for user> \
@@ -35,6 +37,8 @@ docker run -d \
     --name=nginx \
     -v /apps/docker/nginx:/config \
     -v /etc/localtime:/etc/localtime:ro \
+    -p 8080:8080 \
+    -p 8443:8443 \
     -e UMASK=000 \
     -e PUID=0 \
     -e PGID=0 \
