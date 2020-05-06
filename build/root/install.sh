@@ -54,14 +54,18 @@ source aur.sh
 # custom
 ####
 
+# copy modified default nginx config
+cp "/home/nobody/nginx.conf" "/etc/nginx/"
+
 # move default nginx config so we can softlink back from /config
 mv "/etc/nginx" "/etc/nginx-backup"
 
 # move default nginx website so we can softlink back from /config
 mv "/usr/share/nginx/html" "/usr/share/nginx/html-backup"
 
-# required to allow user nobody to create softlink to /etc/nginx
-chmod 777 /etc
+# /etc required to allow user 'nobody' to create softlink to /etc/nginx
+# /run required to create pid file
+chmod 777 /etc /run
 
 # define comma separated list of paths 
 install_paths="/etc/nginx-backup,/var/lib/nginx,/var/log/nginx,/usr/share/nginx,/home/nobody"
