@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/dumb-init /bin/bash
 
 # if nginx config folder on /config doesnt exists then
 # copy nginx config defaults from container
