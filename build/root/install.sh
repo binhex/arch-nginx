@@ -49,7 +49,7 @@ fi
 ####
 
 # define aur packages
-aur_packages=""
+aur_packages="apache-tools"
 
 # call aur install script (arch user repo)
 source aur.sh
